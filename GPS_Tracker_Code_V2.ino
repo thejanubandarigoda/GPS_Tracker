@@ -18,16 +18,16 @@ HardwareSerial gpsSerial(1);  // Using Serial1 for GPS communication
 // ==================================================================
 
 // WiFi Network Credentials
-const char* ssid = "LTE";       // Your WiFi network name (SSID)
-const char* password = "123456789";   // Your WiFi network password
+const char* ssid = "";       // Your WiFi network name (SSID)
+const char* password = "";   // Your WiFi network password
 
 // ==================================================================
 //                   GEOLINKER CONFIGURATION
 // ==================================================================
 
 // API Authentication
-const char* apiKey = "1xPqg2XUQoA6";    // Your unique GeoLinker API key
-const char* deviceID = "https://www.circuitdigest.cloud/geolinker";// Unique identifier for this device
+const char* apiKey = "";    // Your unique GeoLinker API key
+const char* deviceID = "https://www.circuitdigest.cloud";// Unique identifier for this device
 
 // Data Transmission Settings
 const uint16_t updateInterval = 2;       // How often to send data (seconds)
@@ -202,3 +202,4 @@ void loop() {
   // The actual timing is controlled by GeoLinker's internal mechanisms
   delay(100);
 }
+
