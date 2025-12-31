@@ -1,10 +1,6 @@
 
 #include <GeoLinker.h>
 
-// ==================================================================
-//                    HARDWARE CONFIGURATION
-// ==================================================================
-
 // GPS Serial Communication Setup
 HardwareSerial gpsSerial(1);  // Using Serial1 for GPS communication
 #define GPS_RX 16             // GPIO16 connected to GPS module TX pin
@@ -47,10 +43,6 @@ const int8_t timeOffsetMinutes = 30;    // Timezone minutes offset from UTC
 // Create GeoLinker instance
 GeoLinker geo;
 
-// ==================================================================
-//                    INITIALIZATION SETUP
-// ==================================================================
-
 void setup() {
   // Initialize serial communication for debugging
   Serial.begin(115200);
@@ -62,9 +54,6 @@ void setup() {
   gpsSerial.begin(GPS_BAUD, SERIAL_8N1, GPS_RX, GPS_TX);
   Serial.println("GPS Serial initialized on pins 16(RX) and 17(TX)");
 
-  // ==================================================================
-  //                   GEOLINKER LIBRARY SETUP
-  // ==================================================================
   
   // Initialize GeoLinker with GPS serial interface
   geo.begin(gpsSerial);
@@ -114,9 +103,6 @@ void setup() {
   Serial.print(":");
   Serial.println(timeOffsetMinutes);
 
-  // ==================================================================
-  //                    NETWORK CONNECTION SETUP
-  // ==================================================================
   
   // Configure for WiFi mode (alternative: GEOLINKER_GSM for cellular)
   geo.setNetworkMode(GEOLINKER_WIFI);
@@ -143,15 +129,8 @@ void setup() {
   Serial.println(String("=").substring(0,50) + "\n");
 }
 
-// ==================================================================
-//                   MAIN PROGRAM LOOP
-// ==================================================================
-
 void loop() {
-  // ==========================================
-  //         GEOLINKER MAIN OPERATION
-  // ==========================================
-  
+ 
   // Execute main GeoLinker processing cycle
   // This function handles:
   // - GPS data reading and parsing
@@ -202,4 +181,5 @@ void loop() {
   // The actual timing is controlled by GeoLinker's internal mechanisms
   delay(100);
 }
+
 
