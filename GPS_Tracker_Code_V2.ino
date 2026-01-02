@@ -9,17 +9,13 @@ HardwareSerial gpsSerial(1);  // Using Serial1 for GPS communication
 // GPS Communication Settings
 #define GPS_BAUD 9600         // Standard NMEA GPS baud rate (9600 bps)
 
-// ==================================================================
-//                    NETWORK CONFIGURATION
-// ==================================================================
+
 
 // WiFi Network Credentials
 const char* ssid = "";       // Your WiFi network name (SSID)
 const char* password = "";   // Your WiFi network password
 
-// ==================================================================
-//                   GEOLINKER CONFIGURATION
-// ==================================================================
+
 
 // API Authentication
 const char* apiKey = "";    // Your unique GeoLinker API key
@@ -181,5 +177,6 @@ void loop() {
   // The actual timing is controlled by GeoLinker's internal mechanisms
   delay(100);
 }
+
 
 
